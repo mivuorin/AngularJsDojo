@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDojo.Web", "AngularDojo.Web\AngularDojo.Web.csproj", "{F92DED14-DEB6-40CD-A481-828DB4F46CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularDojo.Test", "AngularDojo.Test\AngularDojo.Test.csproj", "{FF71648A-490F-42B4-B433-7178766FAF4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F92DED14-DEB6-40CD-A481-828DB4F46CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92DED14-DEB6-40CD-A481-828DB4F46CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92DED14-DEB6-40CD-A481-828DB4F46CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92DED14-DEB6-40CD-A481-828DB4F46CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF71648A-490F-42B4-B433-7178766FAF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF71648A-490F-42B4-B433-7178766FAF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF71648A-490F-42B4-B433-7178766FAF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF71648A-490F-42B4-B433-7178766FAF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

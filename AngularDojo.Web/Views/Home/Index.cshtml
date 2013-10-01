@@ -1,0 +1,21 @@
+﻿@using System.Web.Optimization
+@model dynamic
+
+<!DOCTYPE html>
+<html ng-app="AngularDojo" >
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div ng-controller="LunchController">
+            <input type="text" ng-model="loanerName" typeahead="loaner.name as name for loaner in loaners | filter:$viewValue" />
+            <input type="button" value="Lisää" ng-click="addLoaner()" />
+            <ul>
+                <li ng-repeat="loaner in loaners">
+                    {{loaner.name}} - {{loaner.vouchers}} 
+                </li>
+            </ul>
+        </div>
+        @Scripts.Render("~/js")
+    </body>
+</html>
