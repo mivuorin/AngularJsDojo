@@ -36,6 +36,11 @@ describe('LunchController test', function() {
             expect(loaner.vouchers).toEqual(1);
         });
 
+        it('should return loaner name in loanerNames', function () {
+            var names = scope.getLoanerNames();
+            expect(names).toEqual([loanerName]);
+        });
+
         describe('and loaner already exists', function() {
             beforeEach(function() {
                 scope.loanerName = 'mikael';
@@ -47,9 +52,5 @@ describe('LunchController test', function() {
                 expect(loaner.vouchers).toBe(2);
             });
         });
-    });
-
-    it('should work?', function() {
-        expect(scope.hello).toBe("hello");
     });
 });

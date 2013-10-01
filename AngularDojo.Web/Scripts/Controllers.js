@@ -2,7 +2,6 @@
 
 angular.module('AngularDojo.Controllers', [])
     .controller('LunchController', ['$scope', function($scope) {
-        $scope.hello = 'hello';
         $scope.loaners = {};
         
         $scope.addLoaner = function () {
@@ -14,5 +13,14 @@ angular.module('AngularDojo.Controllers', [])
                     vouchers: 1
                 };
             }
+        };
+
+        // required for typeahed module becuase it does not work on associative arrays
+        $scope.getLoanerNames = function() {
+            var names = [];
+            for (var loanerName in $scope.loaners){
+                names.push(loanerName);
+            }
+            return names;
         };
     }]);

@@ -13,6 +13,11 @@ namespace AngularDojo.Web.App_Start
                 "~/Scripts/lib/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.6.0.js",
                 "~/Scripts/*.js");
             bundles.Add(bundle);
+
+            var css = new Bundle("~/css")
+                .Include("~/Content/bootstrap.css");
+
+            bundles.Add(css);
         }
     }
 }
