@@ -1,8 +1,8 @@
 ﻿'use strict';
 
 angular.module('AngularDojo.Controllers', [])
-    .controller('LunchController', ['$scope', function($scope) {
-        $scope.loaners = {};
+    .controller('LunchController', ['$scope', 'loanerResource' , function($scope, loanerResource) {
+        $scope.loaners = loanerResource.getAll();
         
         $scope.addLoaner = function () {
             if ($scope.loanerName in $scope.loaners) {

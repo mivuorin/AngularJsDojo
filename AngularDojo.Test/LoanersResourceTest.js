@@ -25,7 +25,14 @@ describe('loaner resource test', function() {
         expect(loanerResource).toBeDefined();
     });
 
-    it('should be foo', function() {
-        expect(loanerResource).toEqual('foo');
+    describe('getAll', function() {
+        var loaners;
+        beforeEach(function() {
+            loaners = loanerResource.getAll();
+        });
+
+        it('should return array of loaners', function() {
+            expect(loaners.length).toBe(3);
+        });
     });
 });

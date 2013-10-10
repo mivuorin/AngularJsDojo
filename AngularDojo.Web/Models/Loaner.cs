@@ -2,7 +2,7 @@
 {
     public class Loaner
     {
-        public string Name { get; set; }
-        public int Vouchers { get; set; }
+        public string name { get; set; }
+        public int vouchers { get; set; }
     }
 }

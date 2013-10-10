@@ -8,15 +8,24 @@
 
 describe('LunchController test', function() {
     var scope;
+    var loanerResourceSpy = jasmine.createSpyObj('loanerResource', ['getAll']);
     
     beforeEach(function () {
         module('AngularDojo.Controllers');
+
+        loanerResourceSpy.getAll.andReturn([]);
+
         inject(function($rootScope, $controller) {
             scope = {};
             $controller('LunchController', {
-                $scope : scope 
+                $scope: scope,
+                loanerResource: loanerResourceSpy
             });
         });
+    });
+
+    it('should get loaners from resource', function() {
+        expect(loanerResourceSpy.getAll).toHaveBeenCalled();
     });
 
     describe('when adding loaner', function() {

@@ -16,9 +16,9 @@ namespace AngularDojo.Web.Controllers
         {
             return new[]
             {
-                new Loaner{Name = "Mikko", Vouchers = 2},
-                new Loaner{Name = "Mikael", Vouchers = 15},
-                new Loaner{Name = "Jani", Vouchers = 1}
+                new Loaner{name = "Mikko", vouchers = 2},
+                new Loaner{name = "Mikael", vouchers = 15},
+                new Loaner{name = "Jani", vouchers = 1}
             };
         }
 
