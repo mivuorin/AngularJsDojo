@@ -1,18 +1,15 @@
 ﻿'use strict';
 
 angular.module('AngularDojo.Controllers', [])
-    .controller('LunchController', ['$scope', 'loanerResource' , function($scope, loanerResource) {
-        $scope.loaners = loanerResource.getAll();
+    .controller('LunchController', ['$scope', 'Loaner' , function($scope, Loaner) {
+        $scope.loaners = Loaner.getAll();
         
         $scope.addLoaner = function () {
-            if ($scope.loanerName in $scope.loaners) {
-                $scope.loaners[$scope.loanerName].vouchers++;
-            } else {
-                $scope.loaners[$scope.loanerName] = {
-                    name: $scope.loanerName,
-                    vouchers: 1
-                };
-            }
+            var loaner = new Loaner({
+                name: $scope.loanerName
+            });
+            loaner.$save();
+            $scope.loaners = Loaner.getAll();
         };
 
         // required for typeahed module becuase it does not work on associative arrays

@@ -12,8 +12,8 @@ describe('loaner resource test', function() {
     beforeEach(function () {
         module('AngularDojo.Resources');
 
-        inject(function (_loanerResource_) {
-            loanerResource = _loanerResource_;
+        inject(function (_Loaner_) {
+            loanerResource = _Loaner_;
         });
         
         //inject(function ($injector) {

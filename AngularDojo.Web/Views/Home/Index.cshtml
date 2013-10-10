@@ -17,13 +17,13 @@
             <div class="row">
                 <div class="span12">
                     <h2>Listaa lounaslippuvelat</h2>
-                    <p>
-                        <form ng-submit="addLoaner()" class="form-inline">
-                            <label class="control-label" for="loanerName">Nimi:</label>
-                            <input id="loanerName" type="text" ng-model="loanerName" typeahead="name for name in getLoanerNames() | filter:$viewValue"  class="input-small" />
-                            <input type="submit" value="Lisää" class="btn" />
-                        </form>
-                    </p>
+                    <form name="loanerForm" ng-submit="addLoaner()" class="form-inline" novalidate>
+                        <label class="control-label" for="loanerName">Nimi:</label>
+                        <input id="loanerName" type="text" name="loanerName" ng-model="loanerName" typeahead="name for name in getLoanerNames() | filter:$viewValue"  class="input-small"
+                               required />
+                         <span ng-show="loanerForm.$invalid && loanerForm.$dirty" class="text-error">Pakollinen!</span>
+                        <input type="submit" value="Lisää" class="btn" ng-disabled="loanerForm.$invalid"  />
+                    </form>
                     <ul>
                         <li ng-repeat="loaner in loaners">
                             {{loaner.name}} - {{loaner.vouchers}} 
