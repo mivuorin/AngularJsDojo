@@ -1,3 +1,3 @@
 ﻿'use strict';
 
-angular.module('AngularDojo', ['AngularDojo.Controllers', 'ui.bootstrap']);
+angular.module('AngularDojo', ['AngularDojo.Controllers', 'ui.bootstrap', 'ngResource']);

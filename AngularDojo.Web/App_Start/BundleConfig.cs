@@ -9,6 +9,7 @@ namespace AngularDojo.Web.App_Start
             var bundle = new Bundle("~/js")
                 .Include(
                 "~/Scripts/lib/angular-1.2.0-rc.2/angular.js", 
+                "~/Scripts/lib/angular-1.2.0-rc.2/angular-resource.js", 
                 "~/Scripts/lib/ui-bootstrap-custom/ui-bootstrap-custom-0.6.0.js",
                 "~/Scripts/lib/ui-bootstrap-custom/ui-bootstrap-custom-tpls-0.6.0.js",
                 "~/Scripts/*.js");

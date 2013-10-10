@@ -121,9 +121,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Loaner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,12 +136,15 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\Controllers.js" />
+    <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular-resource.js" />
+    <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular-resource.min.js" />
     <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular.js" />
     <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular.min.js" />
     <Content Include="Scripts\lib\ui-bootstrap-custom\ui-bootstrap-custom-0.6.0.js" />
     <Content Include="Scripts\lib\ui-bootstrap-custom\ui-bootstrap-custom-0.6.0.min.js" />
     <Content Include="Scripts\lib\ui-bootstrap-custom\ui-bootstrap-custom-tpls-0.6.0.js" />
     <Content Include="Scripts\lib\ui-bootstrap-custom\ui-bootstrap-custom-tpls-0.6.0.min.js" />
+    <Content Include="Scripts\Resources.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -151,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -161,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\lib\angular-1.2.0-rc.2\angular-resource.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
