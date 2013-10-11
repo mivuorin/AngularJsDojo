@@ -8,7 +8,7 @@
         @Styles.Render("~/css")
     </head>
     <body>
-        <div class="container" ng-controller="LunchController">
+        <div class="container" ng-controller="LoanerController">
             <div class="hero-unit">
                 <h1>AngularJs Dojo!</h1>
                 <p>Tässä esimerkki appi, joka on tehty AngularJS:llä</p>
@@ -19,7 +19,7 @@
                     <h2>Listaa lounaslippuvelat</h2>
                     <form name="loanerForm" ng-submit="addLoaner()" class="form-inline" novalidate>
                         <label class="control-label" for="loanerName">Nimi:</label>
-                        <input id="loanerName" type="text" name="loanerName" ng-model="loanerName" typeahead="name for name in getLoanerNames() | filter:$viewValue"  class="input-small"
+                        <input id="loanerName" type="text" name="loanerName" ng-model="loanerName" typeahead="loaner.name for loaner in loaners | filter:$viewValue"  class="input-small"
                                required />
                          <span ng-show="loanerForm.$invalid && loanerForm.$dirty" class="text-error">Pakollinen!</span>
                         <input type="submit" value="Lisää" class="btn" ng-disabled="loanerForm.$invalid"  />

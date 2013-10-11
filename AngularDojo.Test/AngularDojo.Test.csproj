@@ -43,7 +43,7 @@
   <ItemGroup>
     <Content Include="css\jasmine.css" />
     <Content Include="LoanersResourceTest.js" />
-    <Content Include="LunchControllerTest.js" />
+    <Content Include="LoanerControllerTest.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\jasmine-html.js" />
     <Content Include="Scripts\jasmine.js" />

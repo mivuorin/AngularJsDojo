@@ -11,25 +11,32 @@ namespace AngularDojo.Web.Controllers
 {
     public class LoanersController : ApiController
     {
-        private static List<Loaner> loaners = new List<Loaner>
+        private static Dictionary<string, Loaner> loaners = new Dictionary<string, Loaner>
         {
-            new Loaner{name = "Mikko", vouchers = 2},
-            new Loaner{name = "Mikael", vouchers = 15},
-            new Loaner{name = "Jani", vouchers = 1}
+            {"Mikko", new Loaner{name = "Mikko", vouchers = 2}},
+            {"Mikael", new Loaner{name = "Mikael", vouchers = 15}},
+            {"Jani", new Loaner{name = "Jani", vouchers = 1}}
         };
-
+        
         [HttpGet]
         [ActionName("loaners")]
         public IEnumerable<Loaner> GetAll()
         {
-            return loaners;
+            return loaners.Values;
         }
 
         [HttpPost]
         [ActionName("loaners")]
         public Loaner Save([FromBody]Loaner loaner)
         {
-            loaners.Add(loaner);
+            if (loaners.ContainsKey(loaner.name))
+            {
+                loaners[loaner.name].vouchers++;
+            }
+            else
+            {
+                loaners.Add(loaner.name, loaner);
+            }
             return loaner;
         }
     }

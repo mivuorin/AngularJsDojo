@@ -8,14 +8,18 @@
 
 describe('loaner resource test', function() {
     var loanerResource;
-
+    var $httpBackend;
+    
     beforeEach(function () {
+        module('ngResource');
         module('AngularDojo.Resources');
-
-        inject(function (_Loaner_) {
+        
+        inject(function (_$httpBackend_, _Loaner_) {
+            $httpBackend = _$httpBackend_;
             loanerResource = _Loaner_;
         });
         
+        // Alternate way of injectin resource
         //inject(function ($injector) {
         //    loanerResource = $injector.get('loanerResource');
         //});
@@ -27,12 +31,17 @@ describe('loaner resource test', function() {
 
     describe('getAll', function() {
         var loaners;
-        beforeEach(function() {
+        beforeEach(function () {
+            $httpBackend.expectGET('/api/loaners')
+                .respond([{name: 'test1', vouchers: 1}, {name: 'test2', vouchers: 1}]);
+
             loaners = loanerResource.getAll();
+
+            $httpBackend.flush();
         });
 
-        it('should return array of loaners', function() {
-            expect(loaners.length).toBe(3);
+        it('should get all loaners', function() {
+            expect(loaners.length).toBe(2);
         });
     });
 });

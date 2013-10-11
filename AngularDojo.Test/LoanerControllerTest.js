@@ -6,18 +6,18 @@
 'use strict';
 //jasmine.getEnv().currentRunner_.finishCallback = function () { };
 
-describe('LunchController test', function() {
+describe('LoanerController test', function() {
     var scope;
     var loanerSpy = jasmine.createSpyObj('Loaner', ['getAll']);
     
     beforeEach(function () {
         module('AngularDojo.Controllers');
-
+        
         loanerSpy.getAll.andReturn([]);
 
         inject(function($rootScope, $controller) {
             scope = {};
-            $controller('LunchController', {
+            $controller('LoanerController', {
                 $scope: scope,
                 Loaner: loanerSpy
             });
@@ -46,12 +46,7 @@ describe('LunchController test', function() {
             var loaner = scope.loaners[loanerName];
             expect(loaner.vouchers).toEqual(1);
         });
-
-        it('should return loaner name in loanerNames', function () {
-            var names = scope.getLoanerNames();
-            expect(names).toEqual([loanerName]);
-        });
-
+        
         describe('and loaner already exists', function() {
             beforeEach(function() {
                 scope.loanerName = 'mikael';
